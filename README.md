@@ -86,32 +86,3 @@ The backend is a Node.js/Express application located in the `/backend` directory
     npm test
     ```
     This will run the Jest tests for the backend.
-
-## API Endpoints
-
-### Send Email
-
-*   **Endpoint:** `POST /api/send-email`
-*   **Description:** Sends an email using SendGrid. Intended for use by the newsletter subscription form.
-*   **Request Body (JSON):**
-    ```json
-    {
-      "to": "recipient@example.com",
-      "from": "noreply@propease.com", // Must match the configured sender in backend
-      "subject": "Your Subject Here",
-      "html": "<p>Your HTML email content here.</p>"
-    }
-    ```
-*   **Responses:**
-    *   `200 OK`: Email sent successfully.
-        ```json
-        { "message": "Email sent successfully!" }
-        ```
-    *   `400 Bad Request`: Missing fields, invalid email format, invalid 'from' email, or content too long.
-        ```json
-        { "error": "Specific error message here" }
-        ```
-    *   `500 Internal Server Error`: Failed to send email due to a server-side or SendGrid API issue.
-        ```json
-        { "error": "Failed to send email." }
-        ```
