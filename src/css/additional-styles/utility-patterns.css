@@ -1,0 +1,109 @@
+/* Typography */
+.h1 {
+    @apply text-4xl font-extrabold leading-tight tracking-tighter text-gray-900;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.h2 {
+    @apply text-3xl font-extrabold leading-tight tracking-tighter text-gray-900;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.h3 {
+    @apply text-3xl font-bold leading-tight text-gray-900;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.h4 {
+    @apply text-2xl font-bold leading-snug tracking-tight font-space-grotesk text-gray-900;
+}
+
+@screen md {
+    .h1 {
+        @apply text-5xl;
+    }
+
+    .h2 {
+        @apply text-4xl;
+    }
+}
+
+/* Base typography */
+h1, h2, h3, h4, h5, h6 {
+    @apply font-space-grotesk text-gray-900;
+}
+
+p, span, a, label, div {
+    @apply font-lato text-gray-900;
+}
+
+/* Buttons */
+.btn,
+.btn-sm {
+    @apply font-medium inline-flex items-center justify-center border border-transparent rounded leading-snug transition duration-150 ease-in-out;
+}
+
+.btn {
+    @apply px-8 py-3 shadow-lg;
+}
+
+.btn-sm {
+    @apply px-4 py-2 shadow;
+}
+
+/* Forms */
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox,
+.form-radio {
+    @apply bg-white border border-gray-300 focus:border-gray-500;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox {
+    @apply rounded;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select {
+    @apply py-3 px-4;
+}
+
+.form-input,
+.form-textarea {
+    @apply placeholder-gray-500;
+}
+
+.form-select {
+    @apply pr-10;
+}
+
+.form-checkbox,
+.form-radio {
+    @apply text-gray-800 rounded-sm;
+}
+
+/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
+@layer utilities {
+    .rtl {
+        direction: rtl;
+    }
+    
+    /* Add your custom font utility classes */
+    .font-space-grotesk {
+        font-family: "Space Grotesk", sans-serif;
+    }
+    
+    .font-lato {
+        font-family: Lato, sans-serif;
+    }
+    
+    /* Your other utility classes */
+}
